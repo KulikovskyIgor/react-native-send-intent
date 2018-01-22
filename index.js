@@ -23,6 +23,9 @@ var SendIntentAndroid = {
     sendPhoneCall(phoneNumber) {
         RNSendIntentAndroid.sendPhoneCall(phoneNumber);
     },
+    sendVoiceMailCall() {
+      RNSendIntentAndroid.sendVoiceMailCall();
+    },
     sendPhoneDial(phoneNumber) {
         RNSendIntentAndroid.sendPhoneDial(phoneNumber);
     },

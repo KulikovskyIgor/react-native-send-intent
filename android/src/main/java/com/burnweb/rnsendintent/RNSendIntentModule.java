@@ -109,6 +109,12 @@ public class RNSendIntentModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
+    public void sendVoiceMailCall() {
+        TelephonyManager tm =(TelephonyManager)this.reactContext.getSystemService(Context.TELEPHONY_SERVICE);
+        this.sendPhoneCall(tm.getVoiceMailNumber());
+    }
+
+    @ReactMethod
     public void sendPhoneDial(String phoneNumberString) {
       Intent sendIntent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + phoneNumberString.trim()));
       sendIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
